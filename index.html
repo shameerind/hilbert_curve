@@ -6,17 +6,41 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
-    </head>
-    <body>
-        <div>
-            <canvas id="canvas" width="800" height="800"></canvas>
-        </div>
 
         <script src="js/main.js"></script>
         <script>
+        function display_hcurve() {
             var canvas = document.getElementById('canvas');
 
-            hilbertDemo(canvas, 800);
+            hilbertDemo(canvas, 800, document.getElementById('order').value);
+
+          var point = [{ x:0, y:10}, {x:510, y:125}, {x:355, y:760}, {x:700, y:200}];
+        //  animatedBSpline(canvas.getContext("2d"), point, 0);
+          }
         </script>
+    </head>
+    <body>
+        <div>
+          <div style="text-align: center;width:100%; margin-top: 10px;">
+            Select the order of curve:<select  id="order" onchange="display_hcurve()">
+              <option value="2">2</option>
+              <option value="4">4</option>
+              <option value="8">8</option>
+              <option value="16">16</option>
+              <option value="32">32</option>
+              <option value="64">64</option>
+              <option value="128">128</option>
+              <option value="256">256</option>
+            </select>
+        </div>
+            <canvas id="canvas" width="800" height="800" style=""></canvas>
+        </div>
+
+        <div id="gfg">
+        <h1 style="color:green;">GeeksforGeeks</h1>
+        <h4>Window.requestAnimation()</h4>
+    </div>
+
+
     </body>
 </html>
